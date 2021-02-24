@@ -33,8 +33,8 @@ async def status(ctx):
             time = datetime.now()
             clock = time.strftime('%H %M %p')
             embed2 = discord.Embed(color=0x00ff00, title="STATUS SERVER")
-            embed1.add_field(name="Player online:", value=player[0])
-            embed1.add_field(name="Wolrd created:", value=listworld)
+            embed2.add_field(name="Player online:", value=player[0])
+            embed2.add_field(name="Wolrd created:", value=listworld)
             embed2.set_footer(text="Last update today " + clock)
             await msgstatus.edit(embed=embed2)
 
