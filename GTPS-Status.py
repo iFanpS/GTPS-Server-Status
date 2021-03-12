@@ -23,6 +23,10 @@ async def status(ctx):
     time = datetime.now()
     clock = time.strftime('%H:%M %p')
     embed1 = discord.Embed(color=0x00ff00, title="STATUS SERVER")
+    for proc in psutil.process_iter():
+                if 'enet' in proc.name():
+                    embed1.add_field(name="Server Status:", value="UP")
+                    break; #if enet is not running this message will not send
     embed1.add_field(name="Player online:", value=player[0])
     embed1.add_field(name="Wolrd created:", value=listworld)
     embed1.set_footer(text="Last update today" + clock)
@@ -33,6 +37,10 @@ async def status(ctx):
             time = datetime.now()
             clock = time.strftime('%H %M %p')
             embed2 = discord.Embed(color=0x00ff00, title="STATUS SERVER")
+            for proc in psutil.process_iter():
+                if 'enet' in proc.name():
+                    embed2.add_field(name="Server Status:", value="UP")
+                    break; #if enet is not running this message will not send
             embed2.add_field(name="Player online:", value=player[0])
             embed2.add_field(name="Wolrd created:", value=listworld)
             embed2.set_footer(text="Last update today " + clock)
