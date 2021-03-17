@@ -29,6 +29,11 @@ async def status(ctx):
                     break; #if enet is not running this message will not send
     embed1.add_field(name="Player online:", value=player[0])
     embed1.add_field(name="Wolrd created:", value=listworld)
+    players =  os.listdir('your players online path folder')
+    adk = ""
+    for x in players:
+        adk += x + ",";
+    embed1.add_field(name="Player online name:\n", value=adk)
     embed1.set_footer(text="Last update today" + clock)
     msgstatus = await ctx.send(embed=embed1)
     while True:
@@ -43,6 +48,11 @@ async def status(ctx):
                     break; #if enet is not running this message will not send
             embed2.add_field(name="Player online:", value=player[0])
             embed2.add_field(name="Wolrd created:", value=listworld)
+            players =  os.listdir('your players online path folder')
+            adk = ""
+            for x in players:
+                adk += x + ",";
+            embed2.add_field(name="Player online name:\n", value=adk)
             embed2.set_footer(text="Last update today " + clock)
             await msgstatus.edit(embed=embed2)
 
