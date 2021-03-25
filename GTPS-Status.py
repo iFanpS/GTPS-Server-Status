@@ -21,7 +21,7 @@ client = discord.Client()
 @bot.event
 async def on_ready():
     print(f"{Client.user} is on")
-    await client.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(f"My prefix is [{prefix}]"))
+    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(f"My prefix is [{prefix}]"))
 
 @bot.command()
 async def status(ctx):
