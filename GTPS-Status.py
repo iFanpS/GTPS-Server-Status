@@ -35,6 +35,7 @@ async def status(ctx):
         else:
             if 'enet' not in proc.name():
                 embed1.add_field(name="Server Status:", value="DOWN")
+                break;
     embed1.add_field(name="Player online:", value=player[0])
     embed1.add_field(name="Wolrd created:", value=listworld)
     players =  os.listdir('your players online path folder')
@@ -57,6 +58,7 @@ async def status(ctx):
                 else: 
                     if 'enet' not in proc.name():
                         embed2.add_field(name="Server Status:", value="DOWN")
+                        break;
             embed2.add_field(name="Player online:\n", value=player[0])
             embed2.add_field(name="World created:\n", value=listworld)
             players =  os.listdir('players')
