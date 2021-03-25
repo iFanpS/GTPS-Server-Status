@@ -13,13 +13,15 @@ from discord.ext import commands
 def install_discord():
     os.system('python3 -m pip install -U discord.py')
 
-bot = commands.Bot(command_prefix="s.")
+prefix = "c."
+bot = commands.Bot(command_prefix=prefix)
 
-orang = discord.Client()
+client = discord.Client()
     
 @bot.event
 async def on_ready():
-    print(f"{orang.user} is on")
+    print(f"{Client.user} is on")
+    await client.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(f"My prefix is [{prefix}]"))
 
 @bot.command()
 async def status(ctx):
